@@ -1,9 +1,4 @@
 import './style.css';
+import { header } from './modules/header';
 
-function index() {
-    const container = document.createElement('div');
-
-    return container
-}
-
-document.body.appendChild(index());
+document.body.appendChild(header());
