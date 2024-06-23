@@ -1,6 +1,6 @@
 import './style.css';
 
-function index () {
+function index() {
     const container = document.createElement('div');
 
     return container
