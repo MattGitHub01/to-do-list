@@ -21,7 +21,10 @@ export function mainContent() {
     newProjectBtn.addEventListener('click', () => {
         let projectName = prompt('Project Name?');
         const projectLi = document.createElement('li');
-        projectLi.textContent = projectName;
+        const projectLink = document.createElement('button');
+        projectLink.classList.add('m-project-link');
+        projectLink.textContent = projectName;
+        projectLi.appendChild(projectLink);
         projectUl.appendChild(projectLi);
     });
     sidebar.appendChild(newProjectBtn);

@@ -72,6 +72,30 @@ body {
     font-family: 'air-america';
     font-size: 2.1rem;
     text-align: center;
+    margin-bottom: 0;
+}
+
+.m-project-ul {
+    list-style-type: none;
+    align-items: left;
+    font-family: 'air-america';
+    margin-right: 1.1rem;
+}
+
+.m-project-link {
+    border: none;
+    background: none;
+    font-family: 'air-america';
+    font-size: 1.5rem;
+}
+
+.m-project-link:hover {
+    font-size: 1.4rem;
+    color: darkgray;
+}
+
+.m-project-link:active {
+    color: white;
 }
 
 .m-new-project-btn {
