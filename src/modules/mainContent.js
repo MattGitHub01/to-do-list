@@ -10,17 +10,22 @@ export function mainContent() {
     sidebarListTitle.textContent = `Projects`;
     sidebar.appendChild(sidebarListTitle);
 
-    const sidebarUl = document.createElement('ul');
-    sidebarUl.classList.add('sidebar-ul');
+    const projectUl = document.createElement('ul');
+    projectUl.classList.add('m-project-ul');
     // User projects list, updates via user input
-    sidebar.appendChild(sidebarUl);
+    sidebar.appendChild(projectUl);
     
     const newProjectBtn = document.createElement('button');
     newProjectBtn.classList.add('m-new-project-btn');
     newProjectBtn.textContent = `New Project`;
+    newProjectBtn.addEventListener('click', () => {
+        let projectName = prompt('Project Name?');
+        const projectLi = document.createElement('li');
+        projectLi.textContent = projectName;
+        projectUl.appendChild(projectLi);
+    });
     sidebar.appendChild(newProjectBtn);
     
-
     main.appendChild(sidebar);
 
     const mainContent = document.createElement('div');

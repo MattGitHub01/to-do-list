@@ -5,17 +5,15 @@ const Project = function (title, description, date, priority) {
     this.priority = priority;
 }
 
-export function toDoList () {
+export function newProject () {
     let obj = {};
     obj.title = prompt(`title`);
     obj.description = prompt(`description`);
     obj.date = prompt(`date`);
     obj.priority = prompt(`priority`);
-    const buildBox = new Project(obj.title, obj.description, obj.date, obj.priority);
-    alert(buildBox.title);
-    alert(buildBox.description);
-    alert(buildBox.date);
-    alert(buildBox.priority);
+    const usrProject = new Project(obj.title, obj.description, obj.date, obj.priority);
+    
+    return usrProject
 }
 
 //Create object then create a UI element that sends these data points to this function
