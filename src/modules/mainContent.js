@@ -1,6 +1,7 @@
 export function mainContent() {
     const modalProjectForm = document.createElement('dialog');
     modalProjectForm.classList.add('f-new-project-form');
+    document.body.append(modalProjectForm);
 
     const formTag = document.createElement('form');
     formTag.setAttribute('action', '');
@@ -31,15 +32,15 @@ export function mainContent() {
     titleLabel.textContent = `Title: `;
     titleLabel.classList.add('f-label');
     titleLabel.setAttribute('for', 'title');
-    titleLi.appendChild('titleLabel');
+    titleLi.appendChild(titleLabel);
 
     const titleInput = document.createElement('input');
     titleInput.classList.add('f-input');
     titleInput.setAttribute('type', 'text');
     titleInput.setAttribute('name', 'title');
     titleInput.setAttribute('id', 'title');
-    titleInput.setAttribute('required');
-    titleLi.appendChild('titleInput');
+    titleInput.setAttribute('required', '');
+    titleLi.appendChild(titleInput);
 
     // Date Form Input
     const dateLi = document.createElement('li');
@@ -50,15 +51,15 @@ export function mainContent() {
     dateLabel.textContent = `Date: `;
     dateLabel.classList.add('f-label');
     dateLabel.setAttribute('for', 'date');
-    dateLi.appendChild('dateLabel');
+    dateLi.appendChild(dateLabel);
 
     const dateInput = document.createElement('input');
     dateInput.classList.add('f-input');
     dateInput.setAttribute('type', 'date');
     dateInput.setAttribute('name', 'date');
     dateInput.setAttribute('id', 'date');
-    dateInput.setAttribute('required');
-    dateLi.appendChild('dateInput');
+    dateInput.setAttribute('required', '');
+    dateLi.appendChild(dateInput);
 
     // Priority Form Input
     const priorityLi = document.createElement('li');
@@ -69,14 +70,13 @@ export function mainContent() {
     priorityLabel.textContent = `Priority: `;
     priorityLabel.classList.add('f-label');
     priorityLabel.setAttribute('for', 'priority');
-    priorityLi.appendChild('priorityLabel');
+    priorityLi.appendChild(priorityLabel);
 
     const priorityInput = document.createElement('select');
     priorityInput.classList.add('f-input');
     priorityInput.setAttribute('name', 'priority');
-    priorityInput.setAttribute('id', 'priority');
-    priorityInput.setAttribute('required');
-    priorityLi.appendChild('priorityInput');
+    priorityInput.setAttribute('id', 'priority'); 
+    priorityLi.appendChild(priorityInput);
 
     const highPriority = document.createElement('option');
     highPriority.textContent = `High`;
@@ -102,7 +102,7 @@ export function mainContent() {
     descriptionLabel.textContent = `Description: `;
     descriptionLabel.classList.add('f-description-label');
     descriptionLabel.setAttribute('for', 'description');
-    descriptionLi.appendChild('descriptionLabel');
+    descriptionLi.appendChild(descriptionLabel);
 
     const descriptionInput = document.createElement('textarea');
     descriptionInput.classList.add('f-description-input');
@@ -110,7 +110,7 @@ export function mainContent() {
     priorityInput.setAttribute('id', 'description');
     priorityInput.setAttribute('rows', '4');
     priorityInput.setAttribute('cols', '50');
-    priorityInput.setAttribute('required');
+    priorityInput.setAttribute('required', '');
     descriptionLi.appendChild(descriptionInput);
 
     // Creates modal form for project info submission
