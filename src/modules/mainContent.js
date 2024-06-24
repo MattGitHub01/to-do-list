@@ -9,6 +9,11 @@ export function mainContent() {
     sidebarListTitle.classList.add('m-list-title');
     sidebarListTitle.textContent = `Projects`;
     sidebar.appendChild(sidebarListTitle);
+
+    const sidebarUl = document.createElement('ul');
+    sidebarUl.classList.add('sidebar-ul');
+    // User projects list, updates via user input
+    sidebar.appendChild(sidebarUl);
     
     const newProjectBtn = document.createElement('button');
     newProjectBtn.classList.add('m-new-project-btn');
