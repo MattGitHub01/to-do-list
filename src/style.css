@@ -1,8 +1,17 @@
+@font-face {
+    font-family: 'air-america';
+    src: url('./fonts/airamerica-regular-webfont.woff2') format('woff2'),
+         url('./fonts/airamerica-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
+    margin: auto;
 }
 
 .header {
@@ -11,23 +20,64 @@ body {
     justify-content: left;
     width: 100%;
     height: 10%;
-    background-color: aquamarine;
+    background-color: black;
 }
 
-.logo {
+.h-logo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo-img {
+.h-logo-img {
+    fill: white;
     background: url('./images/logo.svg');
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 3rem;
+    height: 3rem;
     margin: .3rem;
 }
 
-.logo-txt {
-    font-size: 1.7rem;
+.h-logo-txt {
+    color: white;
+    font-family: 'air-america';
+    font-size: 2.7rem;
     margin-top: .35rem;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 85%;
+    width: 100%;
+}
+
+.m-content-sidebar {
+    grid-column: 1 / 2;
+    background-color: lightgray;
+}
+
+.m-main-content {
+    grid-column: 2 / 3;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    background-color: black;
+}
+
+.f-footer-txt {
+    font-family: 'air-america';
+    color: white;
+    font-size: 1.1rem;
+}
+
+.f-link {
+    font-family: 'air-america';
+    color: white;
+    font-size: 1.1rem;
 }

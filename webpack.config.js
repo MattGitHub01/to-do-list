@@ -28,7 +28,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'To-Do',
             filename: 'index.html',
-            favicon: './src/images/logo.svg',
+            favicon: './src/images/icon-logo.svg',
             inject: 'head',
             scriptLoading: 'defer'
         })
