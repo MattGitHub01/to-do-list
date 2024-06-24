@@ -119,6 +119,13 @@ export function mainContent() {
     descriptionInput.setAttribute('cols', '50');
     descriptionInput.setAttribute('required', '');
     descriptionLi.appendChild(descriptionInput);
+
+    const submitBtn = document.createElement('button');
+    submitBtn.classList.add('form-submit-btn');
+    submitBtn.setAttribute('id', 'submit');
+    submitBtn.setAttribute('type', 'submit');
+    modalProjectForm.appendChild(submitBtn);
+
     // Creates modal form for project info submission
 
 
