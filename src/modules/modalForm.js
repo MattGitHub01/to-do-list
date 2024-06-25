@@ -110,5 +110,11 @@ export function modalForm() {
     descriptionInput.setAttribute('required', '');
     descriptionLi.appendChild(descriptionInput);
 
+    const submitBtn = document.createElement('input');
+    submitBtn.classList.add('modal-submit-btn');
+    submitBtn.setAttribute('type', 'submit');
+    submitBtn.setAttribute('form', 'project-form');
+    modalProjectForm.appendChild(submitBtn);
+
     modalProjectForm.showModal();
 }

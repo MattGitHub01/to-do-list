@@ -99,12 +99,12 @@ body {
     color: darkgray;
 }
 
-.project-title-label {
+.m-project-title-label {
     font-family: 'air-america';
     font-size: 1.2rem;
 }
 
-.project-title-input {
+.m-project-title-input {
     width: 70%;
     border-radius: 25px;
     border: 2px solid black;
@@ -207,7 +207,8 @@ body {
 .modal-form-title {
     grid-column: 1 / 2;
     font-family: 'air-america';
-    font-size: 2rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
     justify-self: center;
 }
 
@@ -223,7 +224,7 @@ body {
 .modal-li-div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .modal-date-li {
@@ -246,7 +247,6 @@ body {
     margin-left: 2rem;
     border: 1px solid black;
     border-radius: 5px;
-
 }
 
 .modal-description-label {
@@ -260,6 +260,19 @@ body {
     width: 70%;
 }
 
-.submit-btn-div {
+.modal-submit-btn {
+    border: 2px solid black;
+    border-radius: 15px;
+    background: none;
+    font-family: 'air-america';
+    font-size: 1.6rem;
+}
 
+.modal-submit-btn:hover {
+    background-color: lightgray;
+}
+
+.modal-submit-btn:active {
+    background-color: black;
+    color: white;
 }
