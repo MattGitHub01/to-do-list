@@ -158,11 +158,26 @@ body {
 }
 
 .modal-exit-btn-div {
+    display: flex;
+    width: 100%;
+    justify-content: right;
 
 }
 
 .modal-form-exit-btn {
+    background: none;
+    border: 2px solid black;
+    font-weight: bolder;
+}
 
+.modal-form-exit-btn:hover {
+    background: lightgray;
+    color: black;
+}
+
+.modal-form-exit-btn:active {
+    background: black;
+    color: white;
 }
 
 .modal-form-ul {
@@ -173,6 +188,14 @@ body {
 
 }
 
+.modal-date-li {
+
+}
+
+.modal-priority-li {
+    
+}
+
 .modal-label {
 
 }
@@ -181,6 +204,18 @@ body {
 
 }
 
-.modal-date-li {
-    
+.modal-description-li {
+
+}
+
+.modal-description-label {
+
+}
+
+.modal-description-input {
+
+}
+
+.submit-btn-div {
+
 }
