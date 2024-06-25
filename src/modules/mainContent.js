@@ -35,7 +35,7 @@ export function mainContent() {
     newProjectBtn.classList.add('m-new-project-btn');
     newProjectBtn.textContent = `New Project`;
     newProjectBtn.addEventListener('click', () => {
-        if (projectNameInput !== ``) {
+        if (projectNameInput.value !== ``) {
             const projectLi = document.createElement('li');
             projectLi.classList.add('m-project-link');
             projectLi.textContent = projectNameInput.value;
