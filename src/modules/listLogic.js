@@ -4,6 +4,9 @@ const Project = function (title, description, date, priority) {
     this.date = date;
     this.priority = priority;
 }
+let projectValues = {};
+const newProject = new Project(projectValues.title, projectValues.date, projectValues.priority, projectValues.description);
+
 
 export function newProject () {
     let obj = {};
@@ -12,7 +15,6 @@ export function newProject () {
     obj.date = prompt(`date`);
     obj.priority = prompt(`priority`);
     const usrProject = new Project(obj.title, obj.description, obj.date, obj.priority);
-    
     return usrProject
 }
 

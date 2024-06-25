@@ -1,12 +1,4 @@
-const Project = function (title, description, date, priority) {
-    this.title = title;
-    this.description = description;
-    this.date = date;
-    this.priority = priority;
-}
-
-export function createProject() {
-    let projectValues = {};
+export function modalForm() {
     // New Project obj for storing input values and creating project
 
     const modalProjectForm = document.createElement('dialog');
@@ -15,7 +7,7 @@ export function createProject() {
 
     const formTag = document.createElement('form');
     formTag.setAttribute('action', '');
-    formTag.setAttribute('method', 'dialog');
+    formTag.setAttribute('method', 'get');
     formTag.setAttribute('id', 'project-form');
     modalProjectForm.appendChild(formTag);
 
@@ -56,8 +48,6 @@ export function createProject() {
     titleInput.setAttribute('required', '');
     titleLi.appendChild(titleInput);
 
-    projectValues.title = titleInput.value;
-
     // Date Form Input
     const dateLi = document.createElement('li');
     dateLi.classList.add('modal-date-li');
@@ -77,8 +67,6 @@ export function createProject() {
     dateInput.setAttribute('required', '');
     dateLi.appendChild(dateInput);
 
-    projectValues.date = dateInput.value;
-
     // Priority Form Input
     const priorityLi = document.createElement('li');
     priorityLi.classList.add('modal-priority-li');
@@ -95,9 +83,6 @@ export function createProject() {
     priorityInput.setAttribute('name', 'priority');
     priorityInput.setAttribute('id', 'priority'); 
     priorityLi.appendChild(priorityInput);
-
-    projectValues.priority = priorityInput.value;
-    
 
     const highPriority = document.createElement('option');
     highPriority.setAttribute('id', 'priority'); 
@@ -137,8 +122,6 @@ export function createProject() {
     descriptionInput.setAttribute('required', '');
     descriptionLi.appendChild(descriptionInput);
 
-    projectValues.description = descriptionInput.value;
-
     const submitDiv = document.createElement('div');
     submitDiv.classList.add('submit-btn-div');
     descriptionLi.appendChild(submitDiv);
@@ -150,11 +133,13 @@ export function createProject() {
     submitBtn.setAttribute('type', 'submit');
     submitDiv.appendChild(submitBtn);
     submitBtn.addEventListener('click', () => {
+        localStorage.setItem('project-title', titleInput.value);
+        localStorage.setItem('project-date', dateInput.value);
+        localStorage.setItem('project-priority', priorityInput.value);
+        localStorage.setItem('project-description', descriptionInput.value);
         document.body.removeChild(modalProjectForm);
-        return newProject
+        // Stores input values into local storage then removes modal form to avoid multiple form elements in DOM
     });
-    // Creates modal form for project info submission, submit button removes the form from the page
     modalProjectForm.showModal();
-
-    const newProject = new Project(projectValues.title, projectValues.date, projectValues.priority, projectValues.description);
+    // Create modal form and showModal brings it up on screen
 }

@@ -1,4 +1,4 @@
-import { createProject } from './modalForm.js';
+import { modalForm } from './modalForm.js';
 
 export function mainContent() {
     const main = document.createElement('main');
@@ -21,9 +21,17 @@ export function mainContent() {
     newProjectBtn.classList.add('m-new-project-btn');
     newProjectBtn.textContent = `New Project`;
     newProjectBtn.addEventListener('click', () => {
-        let object = createProject();
-        alert(object);
+        modalForm()
+        const projectLi = document.createElement('li');
+        projectUl.appendChild(projectLi);
+
     });
+    document.body.addEventListener('storage', () => {
+        const projectTitle = localStorage.getItem('project-title');
+        document.getElementById('project-title').value = projectTitle;
+        projectLi.textContent = `${projectTitle}`;
+
+    })
     sidebar.appendChild(newProjectBtn);
     
     main.appendChild(sidebar);
