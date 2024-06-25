@@ -102,13 +102,6 @@ export function mainContent() {
     descriptionInput.setAttribute('required', '');
     descriptionLi.appendChild(descriptionInput);
 
-    let liText = '';
-    formExit.addEventListener('click', () => {
-        liText = localStorage.getItem("project-title");
-        document.getElementById("project-title").value = liText;
-
-    })
-
     const main = document.createElement('main');
     main.classList.add('main');
 
@@ -141,7 +134,10 @@ export function mainContent() {
     newProjectBtn.textContent = `New Project`;
     newProjectBtn.addEventListener('click', () => {
         const projectLi = document.createElement('li');
-
+        projectLi.classList.add('m-project-link');
+        projectLi.textContent = projectNameInput.value;
+        projectUl.appendChild(projectLi);
+        projectNameInput.value = '';
     });
 
     document.body
