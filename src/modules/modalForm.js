@@ -9,9 +9,14 @@ export function modalForm() {
     formTag.setAttribute('id', 'project-form');
     modalProjectForm.appendChild(formTag);
 
-    const exitDiv = document.createElement('div');
-    exitDiv.classList.add('modal-exit-btn-div');
-    modalProjectForm.appendChild(exitDiv);
+    const topbarDiv = document.createElement('div');
+    topbarDiv.classList.add('modal-topbar-div');
+    modalProjectForm.appendChild(topbarDiv);
+
+    const formTitle = document.createElement('h2');
+    formTitle.classList.add('modal-form-title')
+    formTitle.textContent = `Project Details`;
+    topbarDiv.appendChild(formTitle);
 
     const formExit = document.createElement('button');
     formExit.classList.add('modal-form-exit-btn');
@@ -21,16 +26,20 @@ export function modalForm() {
     formExit.addEventListener('click', () => {
         document.body.removeChild(modalProjectForm);
     });
-    exitDiv.appendChild(formExit);
+    topbarDiv.appendChild(formExit);
 
     const formUl = document.createElement('ul');
     formUl.classList.add('modal-form-ul');
     modalProjectForm.appendChild(formUl);
 
+    const firstLiDiv = document.createElement('div');
+    firstLiDiv.classList.add('modal-li-div');
+    formUl.appendChild(firstLiDiv);
+
     // Date Form Input
     const dateLi = document.createElement('li');
     dateLi.classList.add('modal-date-li');
-    formUl.appendChild(dateLi);
+    firstLiDiv.appendChild(dateLi);
 
     const dateLabel = document.createElement('label');
     dateLabel.textContent = `Date: `;
@@ -49,7 +58,7 @@ export function modalForm() {
     // Priority Form Input
     const priorityLi = document.createElement('li');
     priorityLi.classList.add('modal-priority-li');
-    formUl.appendChild(priorityLi);
+    firstLiDiv.appendChild(priorityLi);
 
     const priorityLabel = document.createElement('label');
     priorityLabel.textContent = `Priority: `;

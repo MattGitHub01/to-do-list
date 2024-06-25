@@ -61,7 +61,7 @@ body {
     align-items: center;
     flex-direction: column;
     grid-column: 1 / 2;
-    background-color: lightgray;
+    background-color: lightgrey;
 }
 
 .m-main-content {
@@ -90,12 +90,26 @@ body {
 }
 
 .m-project-link:hover {
-    font-size: 1.4rem;
-    color: darkgray;
+    font-size: 1.5rem;
+    color: white;
 }
 
 .m-project-link:active {
-    color: white;
+    font-size: 1.3rem;
+    color: darkgray;
+}
+
+.project-title-label {
+    font-family: 'air-america';
+    font-size: 1.2rem;
+}
+
+.project-title-input {
+    width: 70%;
+    border-radius: 25px;
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
 }
 
 .m-new-project-btn {
@@ -106,6 +120,7 @@ body {
     background: none;
     font-family: 'air-america';
     font-size: 1.7rem;
+    margin: 1rem 0 0 0;
 }
 
 .m-new-project-btn:hover {
@@ -154,19 +169,28 @@ body {
 }
 
 .modal-new-project-form {
-
+    margin-left: 25rem;
+    border-radius: 15px;
+    border: 2px solid black;
 }
 
-.modal-exit-btn-div {
-    display: flex;
+.modal-topbar-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     justify-content: right;
-
 }
 
 .modal-form-exit-btn {
+    grid-column: 2 / 3;
+    font-size: .9rem;
+    justify-self: right;
+    align-self: start;
     background: none;
+    width: 1.6rem;
+    height: 1.6rem;
     border: 2px solid black;
+    border-radius: 5px;
     font-weight: bolder;
 }
 
@@ -180,40 +204,60 @@ body {
     color: white;
 }
 
-.modal-form-ul {
-
+.modal-form-title {
+    grid-column: 1 / 2;
+    font-family: 'air-america';
+    font-size: 2rem;
+    justify-self: center;
 }
 
-.modal-title-li {
+.modal-form-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    list-style-type: none;
+    font-family: 'air-america';
+}
 
+.modal-li-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .modal-date-li {
-
+    margin: 1rem;
 }
 
 .modal-priority-li {
-    
-}
-
-.modal-label {
-
-}
-
-.modal-input {
-
+    margin: 1rem;
 }
 
 .modal-description-li {
+    margin: 1rem;
+}
+
+.modal-label {
+    font-size: 1.4rem;
+}
+
+.modal-input {
+    margin-left: 2rem;
+    border: 1px solid black;
+    border-radius: 5px;
 
 }
 
 .modal-description-label {
-
+    font-size: 1.4rem;
 }
 
 .modal-description-input {
-
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-left: 2rem;
+    width: 70%;
 }
 
 .submit-btn-div {
