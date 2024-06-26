@@ -1,11 +1,18 @@
-export function modalForm() {
+const Project = function (title, date, priority, description) {
+    this.title = title,
+    this.date = date,
+    this.priority = priority,
+    this. description = description
+}
+
+export function modalForm(projectName) {
     const modalProjectForm = document.createElement('dialog');
     modalProjectForm.classList.add('modal-new-project-form');
     document.body.appendChild(modalProjectForm);
 
     const formTag = document.createElement('form');
     formTag.setAttribute('action', '');
-    formTag.setAttribute('method', 'post');
+    formTag.setAttribute('method', '');
     formTag.setAttribute('id', 'project-form');
     modalProjectForm.appendChild(formTag);
 
@@ -110,10 +117,25 @@ export function modalForm() {
     descriptionInput.setAttribute('required', '');
     descriptionLi.appendChild(descriptionInput);
 
-    const submitBtn = document.createElement('input');
+    const submitBtn = document.createElement('button');
+    submitBtn.textContent = 'Enter';
     submitBtn.classList.add('modal-submit-btn');
-    submitBtn.setAttribute('type', 'submit');
-    submitBtn.setAttribute('form', 'project-form');
+    submitBtn.addEventListener('click', () => {
+        //saveProject(projectName, dateInput.value, priorityInput.value, descriptionInput.value);
+
+        let projectId = Storage.length + 1;
+        let idString = JSON.stringify(projectId);
+        let projectObj = new Project(projectName, dateInput.value, priorityInput.value, descriptionInput.value);
+        let projectString = JSON.stringify(projectObj);
+        localStorage.setItem(`project-${idString}`, projectString);
+        //Creates object and saves to memory as string
+
+        dateInput.value = ``;
+        priorityInput.value = ``;
+        descriptionInput.value = ``;
+        document.body.removeChild(modalProjectForm);
+        //Clears and deletes form and form data
+    });
     modalProjectForm.appendChild(submitBtn);
 
     modalProjectForm.showModal();

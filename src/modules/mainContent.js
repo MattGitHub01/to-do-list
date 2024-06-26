@@ -36,18 +36,21 @@ export function mainContent() {
     newProjectBtn.textContent = `New Project`;
     newProjectBtn.addEventListener('click', () => {
         if (projectNameInput.value !== ``) {
+            let titleText = projectNameInput.value;
+            
             const projectLi = document.createElement('li');
             projectLi.classList.add('m-project-link');
-            projectLi.textContent = projectNameInput.value;
+            projectLi.textContent = titleText;
 
             const liDeleteBtn = document.createElement('button');
             liDeleteBtn.classList.add('li-delete-btn');
+            liDeleteBtn.textContent = 'X';
             liDeleteBtn.addEventListener('click', () => {
                 projectUl.removeChild(projectLi);
             });
             projectUl.appendChild(projectLi);
             projectNameInput.value = ``;
-            modalForm();
+            modalForm(titleText);
         }
     });
 
