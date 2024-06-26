@@ -24,4 +24,6 @@ export function projectInfoPopup(projectId) {
     projectDescription.classList.add('m-project-date');
     projectDescription.textContent = storageObject.description;
     projectInfo.appendChild(projectDescription);
+
+    return projectInfo
 }
