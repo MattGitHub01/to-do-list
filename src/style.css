@@ -65,7 +65,43 @@ body {
 }
 
 .m-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-column: 2 / 3;
+}
+
+.m-project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 25px;
+    width: 60%;
+    height: 60%;
+    font-family: 'air-america';
+    background-color: darkgray;
+}
+
+.m-project-title {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.m-project-date {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.m-project-priority {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.m-project-description {
+    font-size: 2rem;
+    margin: 1rem;
 }
 
 .m-list-title {
@@ -98,6 +134,24 @@ body {
     font-size: 1.3rem;
     color: darkgray;
 }
+
+.m-li-delete-button {
+    border: 2px solid black;
+    border-radius: 15px;
+    color: black;
+    background: lightgray;
+    font-size: 1rem;
+}
+
+.m-li-delete-button:hover {
+    background-color: white;
+}
+
+.m-li-delete-button:active {
+    color: white;
+    background: black;
+}
+
 
 .m-project-title-label {
     font-family: 'air-america';

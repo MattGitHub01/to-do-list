@@ -10,18 +10,18 @@ export function projectInfoPopup(projectId) {
     projectTitle.textContent = storageObject.title;
     projectInfo.appendChild(projectTitle);
 
-    const projectDate = document.createElement('p');
+    const projectDate = document.createElement('div');
     projectDate.classList.add('m-project-date');
-    projectDate.textContent = storageObject.date;
+    projectDate.textContent = `Date: ${storageObject.date}`;
     projectInfo.appendChild(projectDate);
 
-    const projectPriority = document.createElement('p');
-    projectPriority.classList.add('m-project-date');
-    projectPriority.textContent = storageObject.priority;
+    const projectPriority = document.createElement('div');
+    projectPriority.classList.add('m-project-priority');
+    projectPriority.textContent = `Priority: ${storageObject.priority}`;
     projectInfo.appendChild(projectPriority);
 
-    const projectDescription = document.createElement('p');
-    projectDescription.classList.add('m-project-date');
+    const projectDescription = document.createElement('div');
+    projectDescription.classList.add('m-project-description');
     projectDescription.textContent = storageObject.description;
     projectInfo.appendChild(projectDescription);
 

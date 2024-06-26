@@ -55,7 +55,7 @@ export function mainContent() {
             projectBtn.setAttribute('project-id', `${projectId}`);
             // projectId used to locate correct project from local memory
             projectBtn.addEventListener('click', () => {
-                mainDiv.append(projectInfoPopup(currentProjectId));
+                mainDiv.replaceChildren(projectInfoPopup(currentProjectId));
             });
             projectLi.appendChild(projectBtn);
             projectId++;
