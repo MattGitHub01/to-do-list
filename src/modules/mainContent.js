@@ -52,7 +52,6 @@ export function mainContent() {
             const projectBtn = document.createElement('button');
             projectBtn.textContent = titleText;
             projectBtn.classList.add('m-project-link');
-            // projectId used to locate correct project from local memory
             projectBtn.addEventListener('click', () => {
                 mainDiv.replaceChildren(projectInfoPopup(currentProjectId));
             });
