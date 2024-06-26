@@ -6,7 +6,7 @@ const Project = function (title, date, priority, description) {
 }
 
 export function saveProject(title, date, priority, description) {
-    let projectId = Storage.length;
+    let projectId = Storage.length + 1;
     let idString = JSON.stringify(projectId);
     let projectObj = new Project(title, date, priority, description);
     let projectString = JSON.stringify(projectObj);
