@@ -1,4 +1,5 @@
 import { modalForm } from './modalForm.js';
+import { projectInfoPopup } from './projectInfoPopup.js';
 
 export function mainContent() {
     const main = document.createElement('main');
@@ -6,6 +7,11 @@ export function mainContent() {
 
     const sidebar = document.createElement('div');
     sidebar.classList.add('m-content-sidebar');
+    main.appendChild(sidebar);
+
+    const mainDiv = document.createElement('div');
+    mainDiv.classList.add('m-main-content');
+    main.appendChild(mainDiv);
 
     const sidebarListTitle = document.createElement('h2');
     sidebarListTitle.classList.add('m-list-title');
@@ -31,38 +37,42 @@ export function mainContent() {
     projectNameInput.setAttribute('required', '');
     sidebar.appendChild(projectNameInput);
 
+    let projectId = 1;
     const newProjectBtn = document.createElement('button');
     newProjectBtn.classList.add('m-new-project-btn');
     newProjectBtn.textContent = `New Project`;
     newProjectBtn.addEventListener('click', () => {
         if (projectNameInput.value !== ``) {
             let titleText = projectNameInput.value;
-            
+            let currentProjectId = projectId;
+
             const projectLi = document.createElement('li');
-            projectLi.classList.add('m-project-link');
-            projectLi.textContent = titleText;
+            projectUl.appendChild(projectLi);
+
+            const projectBtn = document.createElement('button');
+            projectBtn.textContent = titleText;
+            projectBtn.classList.add('m-project-link');
+            projectBtn.setAttribute('project-id', `${projectId}`);
+            // projectId used to locate correct project from local memory
+            projectBtn.addEventListener('click', () => {
+                mainDiv.append(projectInfoPopup(currentProjectId));
+            });
+            projectLi.appendChild(projectBtn);
+            projectId++;
 
             const liDeleteBtn = document.createElement('button');
-            liDeleteBtn.classList.add('li-delete-btn');
+            liDeleteBtn.classList.add('m-li-delete-button');
             liDeleteBtn.textContent = 'X';
             liDeleteBtn.addEventListener('click', () => {
                 projectUl.removeChild(projectLi);
             });
-            projectUl.appendChild(projectLi);
+            projectLi.appendChild(liDeleteBtn);
+
             projectNameInput.value = ``;
             modalForm(titleText);
         }
     });
-
-    document.body
     sidebar.appendChild(newProjectBtn);
-    
-    main.appendChild(sidebar);
-
-    const mainContent = document.createElement('div');
-    mainContent.classList.add('m-main-content');
-
-    main.appendChild(mainContent);
 
     return main
 }
